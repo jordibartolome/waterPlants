@@ -12,12 +12,12 @@ class WaterPlants(object):
 	def start(self):
 		print ("Start")
 		GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
-		GPIO.setup(7, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
-		GPIO.output(7, True) ## Turn on GPIO pin 7
+		GPIO.setup(0, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+		GPIO.output(0, True) ## Turn on GPIO pin 7
 
 	def stop(self):
 		print ("Stop")
-		GPIO.output(17, False) ## Turn on GPIO pin 7
+		GPIO.output(0, False) ## Turn on GPIO pin 7
 
 	def waterPlants(self):
 		print("Watering plants...")
