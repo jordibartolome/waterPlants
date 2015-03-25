@@ -19,6 +19,7 @@ class WaterPlants(object):
 	def stop(self):
 		print ("Stop")
 		GPIO.output(PIN_NUMBER, False) ## Turn on GPIO pin 7
+		GPIO.cleanup()
 
 	def waterPlants(self):
 		print("Watering plants...")
