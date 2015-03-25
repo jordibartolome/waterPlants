@@ -15,6 +15,7 @@ class WaterPlants(object):
 		GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
 		GPIO.setup(PIN_NUMBER, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
 		GPIO.output(PIN_NUMBER, True) ## Turn on GPIO pin 7
+		print GPIO.input(PIN_NUMBER)
 
 	def stop(self):
 		print ("Stop")
