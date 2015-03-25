@@ -3,6 +3,7 @@
 import time
 import RPi.GPIO as GPIO ## Import GPIO library
 
+PIN_NUMBER = 7;
 
 class WaterPlants(object):
 
@@ -12,12 +13,12 @@ class WaterPlants(object):
 	def start(self):
 		print ("Start")
 		GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
-		GPIO.setup(0, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
-		GPIO.output(0, True) ## Turn on GPIO pin 7
+		GPIO.setup(PIN_NUMBER, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+		GPIO.output(PIN_NUMBER, True) ## Turn on GPIO pin 7
 
 	def stop(self):
 		print ("Stop")
-		GPIO.output(0, False) ## Turn on GPIO pin 7
+		GPIO.output(PIN_NUMBER, False) ## Turn on GPIO pin 7
 
 	def waterPlants(self):
 		print("Watering plants...")
