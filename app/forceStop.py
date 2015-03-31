@@ -9,19 +9,14 @@ class StopMotors(object):
     def __init__(self):
         print ("Stop motors")
         GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+        for p in PINS:
+            GPIO.setup(p, GPIO.OUT)
 
-        # Small plants pump
-        GPIO.setup(SMALL_PLANTS_PUMP_PIN_NUMBER, GPIO.OUT)
-        GPIO.output(SMALL_PLANTS_PUMP_PIN_NUMBER, False)
-
-        # Big plants pump
-        GPIO.setup(BIG_PLANTS_PUMP_PIN_NUMBER, GPIO.OUT)
-        GPIO.output(BIG_PLANTS_PUMP_PIN_NUMBER, False)
-
-    def stop(self, pinNumber):
-        for var p in pins:
+    def stop(self):
+        for p in PINS:
             GPIO.output(p, False)
 
+        GPIO.cleanup()
         print("Done!")
 
 wp = StopMotors()
